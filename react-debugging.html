@@ -1,3 +1,4 @@
+
 <!-- ASSESSMENT 3: React Debugging Challenge -->
 
 <!-- This file contains a React component in an HTML file. This React code is broken. Fix the THREE bugs in the code so the user can draw cards and reset the deck. Note: The component is correctly described in this file structure. There is no need to change the architecture of any code. -->
@@ -65,22 +66,26 @@
         // No need to change anything ABOVE this line ^
 
         return (
-          <h1>Draw a Card</h1>
-          <button onClick={}>
-            Click to Draw a Card
-          </button>
-          <button onclick={shuffle}>
-            Return Cards and Shuffle Deck
-          </button>
-          <div style={handStyles}>
-            {hand.map((card, index) => {
-              return (
+          // missing opening and closing fragment tags         
+          // the send onclick here was missing a capital C to make it onClick
+          // There was an extra { at the end of the return block.
+
+          <>
+            <h1>Draw a Card</h1>
+            <button onClick={drawCard}>
+              Click to Draw a Card
+            </button>
+            <button onClick={shuffle}>
+              Return Cards and Shuffle Deck
+            </button>
+            <div style={handStyles}>
+              {hand.map((card, index) => (
                 <div style={cardStyles} key={index}>
                   {card}
                 </div>
-              )
-            })}
-          </div>
+              ))}
+            </div>
+          </>
         )
       }
 
